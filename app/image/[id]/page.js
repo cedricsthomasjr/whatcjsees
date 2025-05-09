@@ -9,7 +9,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import gallery from "@/data/gallery.json";
 
-export default function ImagePage({ params: paramsPromise }) {
+export default function ImagePage({ params }) {
   const [zoomed, setZoomed] = useState(false);
   const [pos, setPos] = useState({ x: "50%", y: "50%" });
 
