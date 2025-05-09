@@ -9,18 +9,20 @@ export default function Footer() {
 
         {/* Center: Nav */}
         <nav className="flex gap-6 text-sm">
-          <a href="/" className="hover:text-white transition">
+          <Link href="/" className="hover:underline">
             Home
-          </a>
-          <a href="/about" className="hover:text-white transition">
+          </Link>
+
+          <Link href="/about" className="hover:underline">
             About
-          </a>
-          <a href="/projects" className="hover:text-white transition">
+          </Link>
+
+          <Link href="/projects" className="hover:text-white transition">
             Projects
-          </a>
-          <a href="/contact" className="hover:text-white transition">
+          </Link>
+          <Link href="/contact" className="hover:text-white transition">
             Contact
-          </a>
+          </Link>
         </nav>
       </div>
     </footer>
