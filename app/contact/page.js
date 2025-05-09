@@ -81,18 +81,18 @@ export default function Contact() {
         >
           <p>
             Email:{" "}
-            <a href="mailto:cj@whatcjsees.com" className="underline">
-              cj@whatcjsees.com
+            <a href="mailto:shootsbycj@gmail.com" className="underline">
+              shootsbycj@gmail.com{" "}
             </a>
           </p>
           <p className="mt-2">
             IG:{" "}
             <a
-              href="https://instagram.com/whatcjsees"
+              href="https://instagram.com/whatcjsees_"
               target="_blank"
               className="underline"
             >
-              @whatcjsees
+              @whatcjsees_
             </a>
           </p>
         </motion.div>
