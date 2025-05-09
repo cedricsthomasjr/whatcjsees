@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="relative bg-black text-white px-6 md:px-12 py-32 overflow-hidden">
+    <section className="relative bg-black text-white px-6 md:px-12 py-32">
       {/* CONTENT CONTAINER */}
       <div className="relative z-10 mx-auto max-w-6xl px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 items-center gap-20">
         {/* LEFT: HERO TEXT */}
@@ -24,26 +24,26 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* RIGHT: ARTISTIC PHOTO CLUSTER */}
-        <div className="relative w-[350px] h-[400px] mx-auto md:mx-0">
+        {/* RIGHT: DRAMATIC PHOTO CLUSTER */}
+        <div className="relative w-[420px] h-[500px] mx-auto md:mx-0 scale-110">
           <img
-            src="/collections/highpeaks/sample1.jpeg"
-            className="absolute top-0 left-6 w-36 rounded-lg rotate-[-3deg] shadow-lg"
+            src="/collections/highpeaks/peaks.jpeg"
+            className="absolute top-0 left-6 w-40 md:w-44 rounded-xl rotate-[-6deg] shadow-2xl z-10"
             alt=""
           />
           <img
-            src="/collections/currents/sample2.jpeg"
-            className="absolute top-24 right-0 w-44 rounded-lg rotate-2 shadow-lg"
+            src="/collections/currents/sienne.jpeg"
+            className="absolute top-24 right-0 w-48 md:w-52 rounded-xl rotate-3 shadow-2xl z-20"
             alt=""
           />
           <img
             src="/collections/cityscapes/veronacity.jpg"
-            className="absolute bottom-0 left-10 w-52 rounded-lg rotate-1 shadow-lg z-10"
+            className="absolute bottom-0 left-10 w-56 md:w-60 rounded-xl rotate-1 shadow-2xl z-30"
             alt=""
           />
           <img
             src="/collections/currents/sample3.jpeg"
-            className="absolute bottom-4 right-8 w-32 -z-10 opacity-50 rounded-lg rotate-6 blur-sm"
+            className="absolute bottom-4 right-8 w-36 md:w-40 -z-10 opacity-40 rounded-xl rotate-6 blur-sm"
             alt=""
           />
         </div>

@@ -1,7 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
 
-export default function PhotoCard({ image }) {
+export default function PhotoCard({
+  image,
+  showLink = false,
+  onViewCollection,
+}) {
   return (
     <div className="relative group overflow-hidden rounded-lg shadow-lg flex flex-col">
       <Image
@@ -16,12 +19,14 @@ export default function PhotoCard({ image }) {
           <h3 className="font-semibold text-white">{image.title}</h3>
           <p className="text-sm text-neutral-400">{image.category}</p>
         </div>
-        <Link
-          href={`/projects/${image.id}`} // eventually map image to collection slug
-          className="mt-4 inline-block text-sm text-white  hover:  text-zinc-400"
-        >
-          View Collection →
-        </Link>
+        {showLink && (
+          <button
+            onClick={onViewCollection}
+            className="mt-4 text-sm text-white hover:text-zinc-400 transition self-start"
+          >
+            View Collection →
+          </button>
+        )}
       </div>
     </div>
   );

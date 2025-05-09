@@ -165,3 +165,6 @@
 .animate-float-slower {
   animation: float-slower 26s ease-in-out infinite;
 }
+html {
+  scroll-behavior: smooth;
+}
