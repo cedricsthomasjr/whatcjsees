@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useState } from "react";
+import { useState } from "react";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -10,15 +10,11 @@ import { motion } from "framer-motion";
 import gallery from "@/data/gallery.json";
 
 export default function ImagePage({ params: paramsPromise }) {
-  const params = use(paramsPromise);
-
-  // 🔐 Move these above the conditional
   const [zoomed, setZoomed] = useState(false);
   const [pos, setPos] = useState({ x: "50%", y: "50%" });
 
+  const params = use(paramsPromise);
   const photo = gallery.find((img) => img.id === params.id);
-
-  // ✅ Now this won't break the hook order
   if (!photo) return notFound();
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
