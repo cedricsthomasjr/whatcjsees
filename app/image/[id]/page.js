@@ -1,4 +1,5 @@
 "use client";
+import { use } from "react"; // ✅ important
 
 import { useState } from "react";
 import { notFound } from "next/navigation";
@@ -9,7 +10,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import gallery from "@/data/gallery.json";
 
-export default function ImagePage({ params }) {
+export default function ImagePage({ params: paramsPromise }) {
+  const params = use(paramsPromise);
+  // ✅ unwraps params.id safely
   const [zoomed, setZoomed] = useState(false);
   const [pos, setPos] = useState({ x: "50%", y: "50%" });
 

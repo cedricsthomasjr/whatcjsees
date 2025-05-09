@@ -15,7 +15,6 @@ export default function Gallery() {
 
   const handleViewCollection = (category) => {
     setSelectedCategory(category);
-    // 👇 Smooth scroll to the category pills
     setTimeout(() => {
       filterRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 100);
@@ -29,19 +28,21 @@ export default function Gallery() {
   return (
     <section
       id="featured"
-      className="px-6 md:px-12 py-16 max-w-screen-xl mx-auto"
+      className="px-2 sm:px-4 md:px-12 py-16 max-w-screen-xl mx-auto"
     >
       {/* ⭐ Featured Work */}
-      <div className="mb-16">
+      <div className="mb-12">
         <h2 className="text-3xl font-bold mb-6">Featured Work</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+        {/* Grid: 3 per row (always) */}
+        <div className="grid grid-cols-3 gap-2 sm:gap-4">
           {featured.map((img) => (
-            <PhotoCard
+            <div
               key={img.id}
-              image={img}
-              showLink
-              onViewCollection={() => handleViewCollection(img.category)}
-            />
+              onClick={() => handleViewCollection(img.category)}
+            >
+              <PhotoCard image={img} showLink />
+            </div>
           ))}
         </div>
       </div>
@@ -51,13 +52,13 @@ export default function Gallery() {
         Full Gallery
       </h2>
 
-      {/* 🧭 Category Filters */}
-      <div className="flex flex-wrap gap-4 mb-8">
+      {/* 🧭 Category Filters - scrollable on mobile */}
+      <div className="flex overflow-x-auto gap-4 mb-8 pb-1 hide-scrollbar">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
-            className={`px-4 py-2 rounded-full border transition ${
+            className={`whitespace-nowrap px-4 py-2 rounded-full border transition ${
               selectedCategory === cat
                 ? "bg-white text-black font-semibold"
                 : "border-white text-white hover:bg-white/10"
@@ -68,8 +69,8 @@ export default function Gallery() {
         ))}
       </div>
 
-      {/* 🖼️ Filtered Gallery */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {/* 🖼️ Full Gallery */}
+      <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 sm:gap-4">
         {filteredGallery.map((img) => (
           <Link key={img.id} href={`/image/${img.id}`}>
             <PhotoCard image={img} />
