@@ -41,7 +41,7 @@ export default function Hero() {
             className="absolute top-24 right-0 rounded-xl rotate-3 shadow-2xl z-20 w-48 md:w-52"
           />
           <Image
-            src="/collections/cityscapes/veronacity.jpg"
+            src="/collections/cityscapes/inn-flow.jpg"
             alt="Verona city view"
             width={240}
             height={320}
