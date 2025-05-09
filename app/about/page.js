@@ -121,7 +121,7 @@ export default function AboutPage() {
             "/collections/high peaks/austrian-paragliders.jpg",
             "/collections/currents/clouds-over-tyrol.jpg",
             "/collections/high peaks/quartz-wall.jpeg",
-            "/collections/cityscapes/veronacity.jpg",
+            "/collections/cityscapes/the-floating-city.jpeg",
             "/collections/currents/still-gondolas.jpg",
             "/collections/high peaks/river-pulse.jpeg",
           ].map((src, i) => (
