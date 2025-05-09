@@ -13,9 +13,9 @@ export default function ImagePage({ params }) {
   const [zoomed, setZoomed] = useState(false);
   const [pos, setPos] = useState({ x: "50%", y: "50%" });
 
-  const params = use(paramsPromise);
   const photo = gallery.find((img) => img.id === params.id);
   if (!photo) return notFound();
+
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
