@@ -18,7 +18,7 @@ const projects = [
       "Photography portfolio that captures urban texture, motion, and quiet — with dynamic filtering and routing.",
     tech: ["Next.js", "Framer Motion", "Tailwind", "JSON API"],
     status: "Live",
-    link: "https://whatcjsees.com",
+    link: "https://whatcjsees.vercel.app",
   },
   {
     title: "DegreeMind",
