@@ -108,7 +108,7 @@ export default function AboutPage() {
           viewport={{ once: true }}
           variants={fadeUp(0.1)}
         >
-          Here’s what I kept
+          Here’s some of what I kept
         </motion.h2>
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto"
