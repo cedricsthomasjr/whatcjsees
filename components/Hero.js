@@ -57,7 +57,7 @@ export default function Hero() {
             className="text-sm text-neutral-500 tracking-wide font-mono flex gap-6 flex-wrap justify-center md:justify-start pt-6"
           >
             <span>📍 6 Countries Shot!</span>
-            <span>🎞 250+ Frames</span>
+            <span>🎞 20+ Frames</span>
             <span>🕒 Moments That Linger</span>
           </motion.div>
         </div>
