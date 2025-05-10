@@ -28,7 +28,7 @@ export default function PhotoCard({
         {showLink && (
           <button
             onClick={onViewCollection}
-            className="mt-3 text-sm text-white hover:text-zinc-400 transition self-start"
+            className="mt-3 text-xs text-white hover:text-zinc-400 transition self-start"
           >
             View Collection →
           </button>
