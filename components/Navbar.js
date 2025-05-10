@@ -10,7 +10,9 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-black border-b border-neutral-800 px-6 md:px-12 py-4">
       <div className="max-w-screen-xl mx-auto flex justify-between items-center">
-        <h1 className="text-white text-xl font-semibold">WhatCJSees</h1>
+        <Link href="/" className="text-white text-xl font-semibold">
+          WhatCJSees
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex space-x-6 text-neutral-400 text-sm">
