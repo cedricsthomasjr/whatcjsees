@@ -30,7 +30,7 @@ export default function PhotoCard({
             onClick={onViewCollection}
             className="mt-3 text-xs text-white hover:text-zinc-400 transition self-start"
           >
-            View Collection →
+            View →
           </button>
         )}
       </div>
