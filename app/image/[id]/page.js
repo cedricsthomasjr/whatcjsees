@@ -39,9 +39,9 @@ export default function ImagePage({ params: paramsPromise }) {
     <main className="min-h-screen bg-black text-white">
       <Navbar />
 
-      <section className="max-w-6xl mx-auto px-6 md:px-12 py-20 space-y-24">
+      <section className="max-w-6xl mx-auto px-6 md:px-12 py-20 space-y-12">
         {/* 🔙 Back Button */}
-        <div className="flex items-center gap-2">
+        <div className="mb-2 flex items-center gap-2">
           <Link
             href="/#featured"
             className="group inline-flex items-center text-sm text-neutral-400 hover:text-white transition font-medium"

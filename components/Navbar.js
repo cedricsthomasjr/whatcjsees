@@ -13,7 +13,6 @@ export default function Navbar() {
         <Link href="/" className="text-white text-xl font-semibold">
           WhatCJSees
         </Link>
-
         {/* Desktop Nav */}
         <div className="hidden md:flex space-x-6 text-neutral-400 text-sm">
           <Link href="/" className="hover:underline">
