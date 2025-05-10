@@ -175,3 +175,20 @@ html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+@keyframes kenburns {
+  0% {
+    transform: scale(1) translate(0%, 0%);
+  }
+  100% {
+    transform: scale(1.08) translate(2%, 2%);
+  }
+}
+/* Removes grid image drag ghosting */
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
+.animate-kenburns {
+  animation: kenburns 20s ease-in-out forwards;
+}

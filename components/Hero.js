@@ -1,54 +1,130 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative bg-black text-white px-4 sm:px-6 md:px-12 pt-24 pb-20">
-      <div className="relative z-10 mx-auto max-w-6xl">
-        {/* GRID: 1 COL MOBILE, 2 COL DESKTOP */}
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12 md:gap-20 text-center md:text-left">
-          {/* TEXT */}
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold leading-snug md:leading-tight tracking-tight mb-4">
-              Light. Time. <br /> Perspective.
-            </h1>
-            <p className="text-base md:text-lg text-neutral-400 max-w-md mx-auto md:mx-0">
-              A living archive of stillness in motion — landscapes, city scenes,
-              and fleeting moments through my lens.
-            </p>
+    <section className="relative min-h-[100dvh] bg-black text-white px-6 pt-20 md:pt-0 flex items-center justify-center">
+      <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        {/* 🔠 TEXT LEFT */}
+        <div className="space-y-10 text-center md:text-left flex flex-col justify-center h-full">
+          {/* Slash Accent */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="origin-left h-[2px] w-32 bg-white mx-auto md:mx-0"
+          />
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1] uppercase"
+          >
+            Light. <br /> Time. <br /> Perspective.
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.7 }}
+            className="text-base sm:text-lg text-neutral-400 max-w-xl mx-auto md:mx-0"
+          >
+            A precision-crafted lens on stillness and speed — from city shadows
+            to alpine edges.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+          >
             <a
               href="#featured"
-              className="inline-block mt-6 md:mt-8 px-6 py-2 bg-white text-black font-medium rounded hover:bg-neutral-200 transition"
+              className="inline-block mt-4 px-6 py-3 bg-white text-black font-semibold rounded hover:bg-neutral-200 transition"
             >
-              Explore the Gallery →
+              View the Gallery →
             </a>
-          </div>
+          </motion.div>
 
-          {/* UNIFIED IMAGE CLUSTER */}
-          <div className="relative w-full max-w-[300px] h-[320px] sm:max-w-[340px] sm:h-[360px] md:max-w-[420px] md:h-[500px] mx-auto md:mx-0 scale-105">
+          {/* 📊 Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.8 }}
+            className="text-sm text-neutral-500 tracking-wide font-mono flex gap-6 flex-wrap justify-center md:justify-start pt-6"
+          >
+            <span>📍 6 Countries Shot!</span>
+            <span>🎞 250+ Frames</span>
+            <span>🕒 Moments That Linger</span>
+          </motion.div>
+        </div>
+
+        {/* 🖼️ IMAGE GRID */}
+        <div className="grid grid-cols-2 gap-4 grid-rows-3 h-[520px]">
+          {/* Top Left */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
             <Image
-              src="/collections/highpeaks/peaks.jpeg"
-              alt="High peaks"
-              width={160}
-              height={240}
-              className="absolute top-0 left-4 sm:left-6 rounded-xl rotate-[-6deg] shadow-2xl z-10 w-28 sm:w-36 md:w-44"
-            />
-            <Image
-              src="/collections/currents/sienne.jpeg"
-              alt="River"
-              width={208}
-              height={288}
-              className="absolute top-20 right-0 rounded-xl rotate-3 shadow-2xl z-20 w-32 sm:w-40 md:w-52"
-            />
-            <Image
-              src="/collections/cityscapes/inn-flow.jpg"
+              src="/collections/cityscapes/veronaian-bustle.JPG"
               alt="Verona"
-              width={240}
-              height={320}
-              className="absolute bottom-0 left-6 sm:left-10 rounded-xl rotate-1 shadow-2xl z-30 w-36 sm:w-48 md:w-60"
+              width={600}
+              height={400}
+              className="w-full h-full object-cover rounded-xl shadow-lg hover:scale-105 transition duration-300"
             />
-          </div>
+          </motion.div>
+
+          {/* Tall Right */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+            className="row-span-2"
+          >
+            <Image
+              src="/collections/cityscapes/the-floating-city.jpeg"
+              alt="Venice"
+              width={600}
+              height={800}
+              className="w-full h-full object-cover rounded-xl shadow-lg hover:scale-105 transition duration-300"
+            />
+          </motion.div>
+
+          {/* Bottom Left */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+          >
+            <Image
+              src="/collections/high peaks/suspension-crossing.jpeg"
+              alt="Suspension Bridge"
+              width={600}
+              height={400}
+              className="w-full h-full object-cover rounded-xl shadow-lg hover:scale-105 transition duration-300"
+            />
+          </motion.div>
+
+          {/* Full Width Bottom */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 }}
+            className="col-span-2 row-span-2"
+          >
+            <Image
+              src="/collections/currents/sugar-pot.jpeg"
+              alt="Sugar Pot"
+              width={1600}
+              height={800}
+              className="w-full h-full object-cover rounded-xl shadow-lg hover:scale-105 transition duration-300"
+            />
+          </motion.div>
         </div>
       </div>
     </section>
