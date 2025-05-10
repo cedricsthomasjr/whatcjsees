@@ -1,5 +1,5 @@
 "use client";
-import { use } from "react"; // ✅ important
+import { use } from "react";
 
 import { useState } from "react";
 import { notFound } from "next/navigation";
@@ -12,7 +12,6 @@ import gallery from "@/data/gallery.json";
 
 export default function ImagePage({ params: paramsPromise }) {
   const params = use(paramsPromise);
-  // ✅ unwraps params.id safely
   const [zoomed, setZoomed] = useState(false);
   const [pos, setPos] = useState({ x: "50%", y: "50%" });
 
@@ -77,39 +76,46 @@ export default function ImagePage({ params: paramsPromise }) {
           }}
         >
           <div className="space-y-4">
-            <h1 className="text-5xl font-bold tracking-tight leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
               {photo.title}
             </h1>
             {photo.description && (
-              <p className="text-lg text-neutral-300 max-w-2xl leading-relaxed">
+              <p className="text-base md:text-lg text-neutral-300 max-w-2xl leading-relaxed">
                 {photo.description}
               </p>
             )}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-sm text-neutral-400">
+          {/* 🧠 Unified Responsive Metadata Grid */}
+          <div className="grid grid-cols-3 gap-6 text-sm text-neutral-400">
             {photo.location && (
               <div title="Location">
-                <p className="text-neutral-500 text-xs uppercase mb-1 tracking-wide">
+                <p className="text-[10px] md:text-xs text-neutral-500 uppercase mb-1 tracking-wide">
                   Location
                 </p>
-                <p className="text-white font-medium">{photo.location}</p>
+                <p className="text-white font-medium text-[13px] md:text-sm leading-tight">
+                  {photo.location}
+                </p>
               </div>
             )}
             {photo.date && (
               <div title="Capture Date">
-                <p className="text-neutral-500 text-xs uppercase mb-1 tracking-wide">
+                <p className="text-[10px] md:text-xs text-neutral-500 uppercase mb-1 tracking-wide">
                   Captured
                 </p>
-                <p className="text-white font-medium">{photo.date}</p>
+                <p className="text-white font-medium text-[13px] md:text-sm leading-tight">
+                  {photo.date}
+                </p>
               </div>
             )}
             {photo.category && (
               <div title="Collection">
-                <p className="text-neutral-500 text-xs uppercase mb-1 tracking-wide">
+                <p className="text-[10px] md:text-xs text-neutral-500 uppercase mb-1 tracking-wide">
                   Collection
                 </p>
-                <p className="text-white font-medium">{photo.category}</p>
+                <p className="text-white font-medium text-[13px] md:text-sm leading-tight">
+                  {photo.category}
+                </p>
               </div>
             )}
           </div>
@@ -118,7 +124,8 @@ export default function ImagePage({ params: paramsPromise }) {
         {/* 🖼️ Hero Image w/ Zoom */}
         <div
           onMouseMove={handleMouseMove}
-          className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl pt-4"
+          onClick={() => setZoomed(true)}
+          className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl pt-4 cursor-zoom-in"
         >
           <Image
             src={photo.src}
@@ -126,7 +133,7 @@ export default function ImagePage({ params: paramsPromise }) {
             fill
             priority
             style={{ transformOrigin: `${pos.x} ${pos.y}` }}
-            className="object-cover rounded-2xl transition-transform duration-300 ease-out hover:scale-200"
+            className="object-cover rounded-2xl transition-transform duration-300 ease-out hover:scale-200 md:hover:scale-200"
           />
         </div>
 
@@ -197,7 +204,7 @@ export default function ImagePage({ params: paramsPromise }) {
               {photo.palette.map((hex, i) => (
                 <div
                   key={i}
-                  className="w-10 h-10 rounded-full border shadow-md"
+                  className="w-8 h-8 md:w-10 md:h-10 rounded-full border shadow-md"
                   style={{ backgroundColor: hex }}
                   title={hex}
                 />
@@ -232,7 +239,7 @@ export default function ImagePage({ params: paramsPromise }) {
         {similar.length > 0 && (
           <div className="pt-12 border-t border-neutral-800 space-y-6">
             <h2 className="text-xl font-semibold text-white">More Like This</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-6">
               {similar.map((img) => (
                 <Link
                   key={img.id}
