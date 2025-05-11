@@ -19,6 +19,29 @@ export const metadata = {
   icons: {
     icon: "/small-logo.ico",
   },
+  openGraph: {
+    title: "WhatCJSees",
+    description:
+      "Built from scratch. Shot with intention. Explore the work of CJ Thomas.",
+    url: "https://whatcjsees.vercel.app",
+    siteName: "WhatCJSees",
+    images: [
+      {
+        url: "/og-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "WhatCJSees — CJ Thomas Photography",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "WhatCJSees",
+    description:
+      "Built from scratch. Shot with intention. Explore the work of CJ Thomas.",
+    images: ["/og-banner.png"],
+  },
 };
 
 export default function RootLayout({ children }) {
