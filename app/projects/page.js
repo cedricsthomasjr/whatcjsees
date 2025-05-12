@@ -9,7 +9,7 @@ const projects = [
     description:
       "NBA & CFB stat explorer powered by AI blurbs, advanced analytics, and player breakdowns. Built with React, Flask, and the NBA API.",
     tech: ["React", "Tailwind", "Flask", "nba_api", "Selenium"],
-    status: "In Progress",
+    status: "Paused at MVP",
     link: "https://athlytic.vercel.app",
   },
   {
